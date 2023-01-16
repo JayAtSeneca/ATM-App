@@ -77,6 +77,14 @@ public class CardHolder
             Console.WriteLine("3. Show Balance");
             Console.WriteLine("4. Exit");
         }
-        
+
+        void deposit(CardHolder currentuser)
+        {
+            Console.WriteLine("How much $$ would you like to deposit? ");
+            double amountDeposit = Double.Parse(Console.ReadLine());
+            currentuser.setBalance(amountDeposit + currentuser.getBalance());
+            Console.WriteLine($"Thank you for your $$. Your new balance is: {currentuser.getBalance()}");
+
+        }
     }
 }
