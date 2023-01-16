@@ -163,5 +163,43 @@ public class CardHolder
                 Console.WriteLine("Incorrect Pin. Please try again..");
             }
         }
+
+         Console.WriteLine($"Welcome {currentUser.getFirstName()}");
+        int option = 0;
+        do
+        {
+            printOptions();
+            try
+            {
+                option = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Error wrong option selected. Please try again...");
+            }
+            if(option == 1)
+            {
+                deposit(currentUser);
+            }
+            else if(option == 2)
+            {
+                withdraw(currentUser);
+            }
+            else if(option == 3)
+            {
+                balance(currentUser);
+            }
+            else if(option == 4)
+            {
+                break;
+            }
+            else
+            {
+                option = 0;
+            }
+
+        } while (option != 4);
+
+        Console.WriteLine("Thank you! Have a nice day!");
     }
 }
