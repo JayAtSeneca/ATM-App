@@ -114,5 +114,31 @@ public class CardHolder
         cardHolders.Add(new CardHolder("4321 2468 6824 4532", 9999, "Frida", "Dickerson", 105.59));
         cardHolders.Add(new CardHolder("2468 6824 4532 4321", 2468, "Muneeb", "Harding", 851.84));
         cardHolders.Add(new CardHolder("6824 4532 4321 2468", 4826, "Dawn", "Smith", 54.27));
+
+        Console.WriteLine("Welcome to ATM");
+        Console.WriteLine("Please insert your card number: ");
+        String debitCardNum = "";
+        CardHolder currentUser;
+
+        while (true)
+        {
+            try
+            {
+                debitCardNum = Console.ReadLine();
+                currentUser = cardHolders.Find(a => a.getNum() == debitCardNum);
+                if(currentUser != null)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Card not recognised. Please try again..");
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Card not recognised. Please try again..");
+            }
+        }
     }
 }
