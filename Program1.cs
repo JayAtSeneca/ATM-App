@@ -102,5 +102,10 @@ public class CardHolder
                 Console.WriteLine($"Thank you. Your withdrawl amount ${currentUser.getBalance() - amountWithdraw}");
             }
         }
+
+        void balance(CardHolder currentUser)
+        {
+            Console.WriteLine($"Current Balance: ${currentUser.getBalance()}");
+        }
     }
 }
