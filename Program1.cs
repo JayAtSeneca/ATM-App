@@ -86,5 +86,21 @@ public class CardHolder
             Console.WriteLine($"Thank you for your $$. Your new balance is: {currentuser.getBalance()}");
 
         }
+
+        void withdraw(CardHolder currentUser)
+        {
+            Console.WriteLine("How much $$ would you like to withdraw? ");
+            double amountWithdraw = Double.Parse(Console.ReadLine());
+
+            if(currentUser.getBalance() < amountWithdraw)
+            {
+                Console.WriteLine("Insufficient Balance");
+            }
+            else
+            {
+                currentUser.setBalance(currentUser.getBalance() - amountWithdraw);
+                Console.WriteLine($"Thank you. Your withdrawl amount ${currentUser.getBalance() - amountWithdraw}");
+            }
+        }
     }
 }
